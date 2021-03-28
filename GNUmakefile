@@ -33,8 +33,8 @@ ifeq ($(ARCH),MINGW)
 CC	=  ${MGW_PREF}-gcc
 WINDRES	?=  windres
 STRIP   ?= ${MGW_PREF}-strip
-RCFLAGS	+= -DMINGW $(shell pkg-config sdl2 --cflags) -I${MINGW_DEPS_ROOT}/zlib-${ZLIB_VER}
-LIBS	+= $(shell pkg-config sdl2 --libs) -lmingw32 -luser32 -lgdi32 -lwinmm -L${MINGW_DEPS_ROOT}/zlib-${ZLIB_VER} -lz -lm
+RCFLAGS	+= -DMINGW $(shell pkg-config sdl2 --static --cflags) -I${MINGW_DEPS_ROOT}/zlib-${ZLIB_VER}
+LIBS	+= $(shell pkg-config sdl2 --static --libs) -lmingw32 -luser32 -lgdi32 -lwinmm -L${MINGW_DEPS_ROOT}/zlib-${ZLIB_VER} -lz -lm -static
 ifeq (${BUILD_TYPE},debug)
 LIBS    += -mconsole
 endif

@@ -82,7 +82,7 @@ out:
 	return(1);
 }
 
-bool GetAsyncKeyState(int key)
+bool GetAsyncKeyState_custom2(int key)
 {
 	const uint8_t *keys;
 	
