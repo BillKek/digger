@@ -27,7 +27,7 @@ jobs:
           msys2 -c 'pacman --noconfirm -Suu'
       - name: Build
         run: |
-          make
+          mingw32-make.exe
         shell: cmd
         env:
           CC: gcc
